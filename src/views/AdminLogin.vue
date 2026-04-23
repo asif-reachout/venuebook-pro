@@ -1,11 +1,11 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 flex items-center justify-center p-4">
+    class="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-slate-50 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 flex items-center justify-center p-4 transition-colors duration-300">
 
     <!-- Background glow -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
-        class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl">
+        class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-3xl">
       </div>
     </div>
 
@@ -20,16 +20,16 @@
               d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         </div>
-        <h1 class="text-2xl font-bold text-white tracking-tight">VenueBook Admin</h1>
-        <p class="text-slate-400 text-sm mt-1">Sign in to manage bookings</p>
+        <h1 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">VenueBook Admin</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Sign in to manage bookings</p>
       </div>
 
       <!-- Card -->
-      <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+      <div class="bg-white dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-2xl p-8 shadow-2xl">
 
         <!-- Error Alert -->
         <div v-if="authStore.error"
-          class="flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl p-3 mb-5">
+          class="flex items-center gap-2 bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400 text-sm rounded-xl p-3 mb-5">
           <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd"
               d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -42,16 +42,16 @@
 
           <!-- Email -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Email Address</label>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Email Address</label>
             <input id="login-email" v-model="email" type="email" required placeholder="admin@example.com"
-              class="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
+              class="w-full bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
           </div>
 
           <!-- Password -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Password</label>
             <input id="login-password" v-model="password" type="password" required placeholder="••••••••"
-              class="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
+              class="w-full bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition" />
           </div>
 
           <!-- Submit -->
@@ -66,7 +66,7 @@
         </form>
       </div>
 
-      <p class="text-center text-slate-600 text-xs mt-6">Venue Booking System © 2025</p>
+      <p class="text-center text-slate-500 dark:text-slate-600 text-xs mt-6">Venue Booking System © 2025</p>
     </div>
   </div>
 </template>
