@@ -39,12 +39,10 @@ export const useBookingsStore = defineStore('bookings', () => {
     } else {
       const booking = bookings.value.find(b => b.id === id)
       if (booking) booking.status = status
-      const messages = {
-        approved: '✅ Booking approved successfully',
-        rejected: '❌ Booking rejected',
-        pending: '🔄 Booking reset to pending',
-      }
-      toast.success(messages[status] || 'Status updated')
+
+      if (status === 'approved') toast.success('Booking approved successfully')
+      else if (status === 'rejected') toast.error('Booking has been rejected')
+      else toast.info('Booking reset to pending')
     }
     updatingId.value = null
   }
