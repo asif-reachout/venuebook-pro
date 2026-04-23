@@ -4,6 +4,10 @@ A production-quality, fully responsive venue booking web application built for t
 
 🌐 **Live Demo:** [venuebook-pro.netlify.app](https://venuebook-pro.netlify.app)
 
+> **Admin Panel Testing Credentials:**
+> Email: `admin@gmail.com`
+> Password: `11223344`
+
 ---
 
 ## ✨ Features
