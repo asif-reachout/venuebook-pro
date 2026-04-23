@@ -9,10 +9,11 @@ const app = createApp(App)
 const pinia = createPinia()
 
 app.use(pinia)
-app.use(router)
 
-// Restore session before mounting
+// ✅ Init auth FIRST, then mount router
+// This prevents the router guard from running before the session is restored
 const authStore = useAuthStore()
 authStore.init().then(() => {
+  app.use(router)
   app.mount('#app')
 })
