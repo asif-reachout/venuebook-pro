@@ -14,11 +14,8 @@
       <!-- Logo / Header -->
       <div class="text-center mb-8">
         <div
-          class="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-2xl mb-4 shadow-lg shadow-indigo-500/30">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
+          class="inline-flex items-center justify-center mb-4">
+          <img src="/logo.png" alt="VenueBook" class="w-16 h-16 rounded-2xl shadow-lg shadow-indigo-500/30" />
         </div>
         <h1 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">VenueBook Admin</h1>
         <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Sign in to manage bookings</p>

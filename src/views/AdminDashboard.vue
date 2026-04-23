@@ -8,12 +8,7 @@
     <div
       class="lg:hidden fixed top-0 inset-x-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-white/5 flex items-center justify-between px-4 py-3.5 transition-colors duration-300">
       <div class="flex items-center gap-2">
-        <div class="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
-          </svg>
-        </div>
+        <img src="/logo.png" alt="VenueBook" class="w-7 h-7 rounded-lg shadow-sm" />
         <span class="font-bold text-sm text-slate-900 dark:text-white">VenueBook Admin</span>
       </div>
       <div class="flex items-center gap-2">
@@ -44,12 +39,7 @@
       <!-- Logo -->
       <div class="p-6 border-b border-slate-200 dark:border-white/5 flex justify-between items-center">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
-            </svg>
-          </div>
+          <img src="/logo.png" alt="VenueBook" class="w-9 h-9 rounded-xl shadow-sm" />
           <div>
             <p class="font-bold text-sm text-slate-900 dark:text-white">VenueBook</p>
             <p class="text-xs text-slate-500">Admin Panel</p>
@@ -77,18 +67,7 @@
         </router-link>
       </nav>
 
-      <!-- Theme Toggle Desktop -->
-      <div class="px-4 pb-2 hidden lg:block">
-        <button @click="themeStore.toggle()" class="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition">
-          <svg v-if="themeStore.isDark" class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-          <svg v-else class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-          {{ themeStore.isDark ? 'Light Mode' : 'Dark Mode' }}
-        </button>
-      </div>
+
 
       <!-- User + Logout -->
       <div class="p-4 border-t border-slate-200 dark:border-white/5">
@@ -117,9 +96,22 @@
     <main class="lg:ml-64 p-4 lg:p-8 pt-16 lg:pt-8 transition-colors duration-300">
 
       <!-- Header -->
-      <div class="mb-8">
-        <h1 class="text-2xl font-bold mb-1 text-slate-900 dark:text-white">Bookings</h1>
-        <p class="text-slate-500 dark:text-slate-400 text-sm">Manage and respond to booking requests</p>
+      <div class="mb-8 flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-bold mb-1 text-slate-900 dark:text-white">Bookings</h1>
+          <p class="text-slate-500 dark:text-slate-400 text-sm">Manage and respond to booking requests</p>
+        </div>
+        
+        <!-- Theme Toggle Desktop -->
+        <button @click="themeStore.toggle()" class="hidden lg:flex relative p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg v-if="themeStore.isDark" class="w-5 h-5 text-amber-400 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg v-else class="w-5 h-5 text-indigo-600 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
       </div>
 
       <!-- Stats Grid -->
