@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen bg-slate-950 text-white">
+  <div class="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
 
     <!-- Navbar -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+    <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3">
-        <router-link to="/" class="text-slate-400 hover:text-white transition flex items-center gap-1.5 text-sm">
+        <router-link to="/" class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition flex items-center gap-1.5 text-sm">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -37,8 +37,8 @@
 
           <!-- Left: Details -->
           <div class="lg:col-span-2">
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-8 mb-6">
-              <h1 class="text-3xl font-bold mb-3">{{ venue.name }}</h1>
+            <div class="bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-2xl p-8 mb-6">
+              <h1 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">{{ venue.name }}</h1>
 
               <div class="flex flex-wrap gap-4 mb-6">
                 <div class="flex items-center gap-1.5 text-slate-400 text-sm">
@@ -58,11 +58,11 @@
               </div>
 
               <h2 class="text-lg font-semibold mb-3 text-slate-200">About This Venue</h2>
-              <p class="text-slate-400 leading-relaxed">{{ venue.description }}</p>
+              <p class="text-slate-500 dark:text-slate-400 leading-relaxed">{{ venue.description }}</p>
             </div>
 
             <!-- Features -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div class="bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-2xl p-8">
               <h2 class="text-lg font-semibold mb-5">What's Included</h2>
               <div class="grid grid-cols-2 gap-3">
                 <div v-for="feature in features" :key="feature"
@@ -91,7 +91,7 @@
                   </svg>
                 </div>
                 <h3 class="font-semibold text-lg">Ready to Book?</h3>
-                <p class="text-slate-400 text-sm mt-1">Secure your date now</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Secure your date now</p>
               </div>
 
               <div class="space-y-3 mb-6 text-sm text-slate-400">
@@ -126,7 +126,7 @@
 
     <!-- Not Found -->
     <div v-else class="pt-40 text-center">
-      <p class="text-slate-400">Venue not found.</p>
+      <p class="text-slate-500 dark:text-slate-400">Venue not found.</p>
       <router-link to="/" class="text-indigo-400 hover:underline mt-4 inline-block">← Back to venues</router-link>
     </div>
   </div>

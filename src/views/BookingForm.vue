@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen bg-slate-950 text-white">
+  <div class="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
 
     <!-- Navbar -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+    <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3">
         <router-link :to="`/venues/${route.params.id}`"
-          class="text-slate-400 hover:text-white transition flex items-center gap-1.5 text-sm">
+          class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition flex items-center gap-1.5 text-sm">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -21,14 +21,14 @@
         <span class="inline-block bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium px-4 py-1.5 rounded-full mb-4">
           Booking Request
         </span>
-        <h1 class="text-3xl font-bold mb-2">Book Your Venue</h1>
-        <p class="text-slate-400" v-if="venuesStore.currentVenue">
-          Booking: <span class="text-indigo-300 font-medium">{{ venuesStore.currentVenue.name }}</span>
+        <h1 class="text-3xl font-bold mb-2 text-slate-900 dark:text-white">Book Your Venue</h1>
+        <p class="text-slate-500 dark:text-slate-400" v-if="venuesStore.currentVenue">
+          Booking: <span class="text-indigo-600 dark:text-indigo-300 font-medium">{{ venuesStore.currentVenue.name }}</span>
         </p>
       </div>
 
       <!-- Form Card -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+      <div class="bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-2xl p-8">
 
         <!-- Submit Error -->
         <div v-if="submitError"
@@ -45,8 +45,8 @@
 
           <!-- Full Name -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">
-              Full Name <span class="text-red-400">*</span>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+              Full Name <span class="text-red-500 dark:text-red-400">*</span>
             </label>
             <input
               v-model="form.name"
@@ -64,8 +64,8 @@
 
           <!-- Email -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">
-              Email Address <span class="text-red-400">*</span>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+              Email Address <span class="text-red-500 dark:text-red-400">*</span>
             </label>
             <input
               v-model="form.email"
@@ -83,7 +83,7 @@
 
           <!-- Phone -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
               Phone Number <span class="text-slate-500 text-xs">(optional)</span>
             </label>
             <input
@@ -105,8 +105,8 @@
 
             <!-- Date -->
             <div>
-              <label class="block text-sm font-medium text-slate-300 mb-1.5">
-                Event Date <span class="text-red-400">*</span>
+              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                Event Date <span class="text-red-500 dark:text-red-400">*</span>
               </label>
               <input
                 v-model="form.date"
@@ -125,8 +125,8 @@
 
             <!-- Time Slot -->
             <div>
-              <label class="block text-sm font-medium text-slate-300 mb-1.5">
-                Time Slot <span class="text-red-400">*</span>
+              <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                Time Slot <span class="text-red-500 dark:text-red-400">*</span>
               </label>
               <select
                 v-model="form.time_slot"
@@ -159,7 +159,7 @@
 
           <!-- Notes -->
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
               Additional Notes <span class="text-slate-500 text-xs">(optional)</span>
             </label>
             <textarea
@@ -167,7 +167,7 @@
               id="booking-notes"
               rows="3"
               placeholder="Any special requirements or requests..."
-              class="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"
+              class="w-full bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"
             ></textarea>
           </div>
 
@@ -177,12 +177,12 @@
           </p>
 
           <!-- Progress indicator -->
-          <div class="bg-white/5 rounded-xl p-4">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+          <div class="bg-slate-50 dark:bg-white/5 rounded-xl p-4">
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-2">
               <span>Form completion</span>
-              <span class="font-medium text-white">{{ completionPercent }}%</span>
+              <span class="font-medium text-slate-900 dark:text-white">{{ completionPercent }}%</span>
             </div>
-            <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+            <div class="h-1.5 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
               <div
                 class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
                 :style="{ width: completionPercent + '%' }"
@@ -300,13 +300,13 @@ const completionPercent = computed(() => {
 
 // --- Input CSS helper ---
 function inputClass(field) {
-  const base = 'w-full border text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 transition'
+  const base = 'w-full border text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 transition'
   const isSelect = field === 'time_slot'
-  const bg = isSelect ? 'bg-slate-800' : 'bg-white/5'
-  if (!touched[field]) return `${base} ${bg} border-white/10 focus:ring-indigo-500`
-  if (errors.value[field]) return `${base} ${bg} border-red-500/50 focus:ring-red-500 bg-red-500/5`
+  const bg = isSelect ? 'bg-white dark:bg-slate-800' : 'bg-white dark:bg-white/5'
+  if (!touched[field]) return `${base} ${bg} border-slate-300 dark:border-white/10 focus:ring-indigo-500`
+  if (errors.value[field]) return `${base} ${bg} border-red-500/50 focus:ring-red-500 bg-red-50 dark:bg-red-500/5`
   if (form[field]) return `${base} ${bg} border-emerald-500/40 focus:ring-emerald-500`
-  return `${base} ${bg} border-white/10 focus:ring-indigo-500`
+  return `${base} ${bg} border-slate-300 dark:border-white/10 focus:ring-indigo-500`
 }
 
 // --- Duplicate booking check ---

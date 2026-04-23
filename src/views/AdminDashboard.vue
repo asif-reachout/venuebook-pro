@@ -2,11 +2,11 @@
   <div class="min-h-screen bg-slate-950 text-white">
 
     <!-- Mobile Overlay -->
-    <div v-if="sidebarOpen" @click="sidebarOpen = false"
-      class="fixed inset-0 bg-black/60 z-30 lg:hidden"></div>
+    <div v-if="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 bg-black/60 z-30 lg:hidden"></div>
 
     <!-- Mobile Top Bar -->
-    <div class="lg:hidden fixed top-0 inset-x-0 z-40 bg-slate-900 border-b border-white/5 flex items-center justify-between px-4 py-3.5">
+    <div
+      class="lg:hidden fixed top-0 inset-x-0 z-40 bg-slate-900 border-b border-white/5 flex items-center justify-between px-4 py-3.5">
       <div class="flex items-center gap-2">
         <div class="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center">
           <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,8 @@
 
       <!-- Nav -->
       <nav class="flex-1 p-4 space-y-1">
-        <div class="flex items-center gap-3 px-3 py-2.5 bg-indigo-600/10 border border-indigo-500/20 rounded-xl text-indigo-300 text-sm font-medium">
+        <div
+          class="flex items-center gap-3 px-3 py-2.5 bg-indigo-600/10 border border-indigo-500/20 rounded-xl text-indigo-300 text-sm font-medium">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -67,7 +68,8 @@
       <!-- User + Logout -->
       <div class="p-4 border-t border-white/5">
         <div class="bg-white/5 rounded-xl p-3 flex items-center gap-3 mb-3">
-          <div class="w-8 h-8 bg-indigo-600/30 rounded-lg flex items-center justify-center text-indigo-300 text-xs font-bold uppercase">
+          <div
+            class="w-8 h-8 bg-indigo-600/30 rounded-lg flex items-center justify-center text-indigo-300 text-xs font-bold uppercase">
             {{ authStore.user?.email?.charAt(0) }}
           </div>
           <div class="min-w-0">
@@ -117,14 +119,12 @@
 
       <!-- Filter Tabs -->
       <div class="flex gap-2 mb-6">
-        <button v-for="tab in tabs" :key="tab.value"
-          @click="activeTab = tab.value"
-          :class="[
-            'px-4 py-2 rounded-xl text-sm font-medium transition-all',
-            activeTab === tab.value
-              ? 'bg-indigo-600 text-white'
-              : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
-          ]">
+        <button v-for="tab in tabs" :key="tab.value" @click="activeTab = tab.value" :class="[
+          'px-4 py-2 rounded-xl text-sm font-medium transition-all',
+          activeTab === tab.value
+            ? 'bg-indigo-600 text-white'
+            : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+        ]">
           {{ tab.label }}
           <span class="ml-1.5 bg-white/10 text-xs px-1.5 py-0.5 rounded-full">{{ tab.count }}</span>
         </button>
@@ -141,7 +141,8 @@
       </div>
 
       <!-- Bookings Table -->
-      <div v-else-if="filteredBookings.length > 0" class="bg-white/3 border border-white/8 rounded-2xl overflow-hidden overflow-x-auto">
+      <div v-else-if="filteredBookings.length > 0"
+        class="bg-white/3 border border-white/8 rounded-2xl overflow-hidden overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-white/8 text-xs text-slate-500 uppercase tracking-wider">
@@ -154,8 +155,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-white/5">
-            <tr v-for="booking in filteredBookings" :key="booking.id"
-              class="hover:bg-white/3 transition-colors group">
+            <tr v-for="booking in filteredBookings" :key="booking.id" class="hover:bg-white/3 transition-colors group">
 
               <!-- Guest -->
               <td class="px-6 py-4">
@@ -191,8 +191,7 @@
               <!-- Actions -->
               <td class="px-6 py-4 text-right">
                 <div v-if="booking.status === 'pending'" class="flex items-center justify-end gap-2">
-                  <button
-                    @click="store.updateStatus(booking.id, 'approved')"
+                  <button @click="store.updateStatus(booking.id, 'approved')"
                     :disabled="store.updatingId === booking.id"
                     class="flex items-center gap-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-400 text-xs font-medium px-3 py-1.5 rounded-lg transition disabled:opacity-50">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,8 +199,7 @@
                     </svg>
                     Approve
                   </button>
-                  <button
-                    @click="store.updateStatus(booking.id, 'rejected')"
+                  <button @click="store.updateStatus(booking.id, 'rejected')"
                     :disabled="store.updatingId === booking.id"
                     class="flex items-center gap-1.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-400 text-xs font-medium px-3 py-1.5 rounded-lg transition disabled:opacity-50">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,8 +210,7 @@
                 </div>
 
                 <!-- Already actioned -->
-                <button v-else
-                  @click="store.updateStatus(booking.id, 'pending')"
+                <button v-else @click="store.updateStatus(booking.id, 'pending')"
                   :disabled="store.updatingId === booking.id"
                   class="text-slate-600 hover:text-slate-400 text-xs transition disabled:opacity-50">
                   Reset
@@ -272,7 +269,7 @@ function statusClass(status) {
 }
 
 function statusLabel(status) {
-  return { pending: '⏳ Pending', approved: '✅ Approved', rejected: '❌ Rejected' }[status] || status
+  return { pending: '⏳ Pending', approved: 'Approved', rejected: 'Rejected' }[status] || status
 }
 
 function formatDate(dateStr) {
