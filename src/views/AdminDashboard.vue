@@ -13,16 +13,20 @@
       </div>
       <div class="flex items-center gap-2">
         <!-- Theme Toggle Mobile -->
-        <button @click="themeStore.toggle()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition text-slate-500 dark:text-slate-400">
-          <svg v-if="themeStore.isDark" class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        <button @click="themeStore.toggle()"
+          class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition text-slate-500 dark:text-slate-400">
+          <svg v-if="themeStore.isDark" class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 16a4 4 0 100-8 4 4 0 000 8z" />
           </svg>
           <svg v-else class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
         <!-- Menu toggle -->
-        <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition">
+        <button @click="sidebarOpen = !sidebarOpen"
+          class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition">
           <svg class="w-5 h-5 text-slate-500 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -101,34 +105,46 @@
           <h1 class="text-2xl font-bold mb-1 text-slate-900 dark:text-white">Bookings</h1>
           <p class="text-slate-500 dark:text-slate-400 text-sm">Manage and respond to booking requests</p>
         </div>
-        
+
         <!-- Theme Toggle Desktop -->
-        <button @click="themeStore.toggle()" class="hidden lg:flex relative p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden group">
-          <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <svg v-if="themeStore.isDark" class="w-5 h-5 text-amber-400 relative z-10" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        <button @click="themeStore.toggle()"
+          class="hidden lg:flex relative p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <svg v-if="themeStore.isDark" class="w-5 h-5 text-amber-400 relative z-10" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 16a4 4 0 100-8 4 4 0 000 8z" />
           </svg>
-          <svg v-else class="w-5 h-5 text-indigo-600 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          <svg v-else class="w-5 h-5 text-indigo-600 relative z-10" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
       </div>
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-8">
-        <div class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/8 rounded-2xl p-5 shadow-sm dark:shadow-none transition-colors duration-300">
+        <div
+          class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/8 rounded-2xl p-5 shadow-sm dark:shadow-none transition-colors duration-300">
           <p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Total</p>
           <p class="text-3xl font-bold text-slate-900 dark:text-white">{{ store.total }}</p>
         </div>
-        <div class="bg-amber-50 dark:bg-amber-500/5 border border-amber-200 dark:border-amber-500/15 rounded-2xl p-5 transition-colors duration-300">
+        <div
+          class="bg-amber-50 dark:bg-amber-500/5 border border-amber-200 dark:border-amber-500/15 rounded-2xl p-5 transition-colors duration-300">
           <p class="text-amber-600 dark:text-amber-400/70 text-xs font-medium uppercase tracking-wider mb-2">Pending</p>
           <p class="text-3xl font-bold text-amber-600 dark:text-amber-400">{{ store.pending }}</p>
         </div>
-        <div class="bg-emerald-50 dark:bg-emerald-500/5 border border-emerald-200 dark:border-emerald-500/15 rounded-2xl p-5 transition-colors duration-300">
-          <p class="text-emerald-600 dark:text-emerald-400/70 text-xs font-medium uppercase tracking-wider mb-2">Approved</p>
+        <div
+          class="bg-emerald-50 dark:bg-emerald-500/5 border border-emerald-200 dark:border-emerald-500/15 rounded-2xl p-5 transition-colors duration-300">
+          <p class="text-emerald-600 dark:text-emerald-400/70 text-xs font-medium uppercase tracking-wider mb-2">
+            Approved</p>
           <p class="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{{ store.approved }}</p>
         </div>
-        <div class="bg-red-50 dark:bg-red-500/5 border border-red-200 dark:border-red-500/15 rounded-2xl p-5 transition-colors duration-300">
+        <div
+          class="bg-red-50 dark:bg-red-500/5 border border-red-200 dark:border-red-500/15 rounded-2xl p-5 transition-colors duration-300">
           <p class="text-red-600 dark:text-red-400/70 text-xs font-medium uppercase tracking-wider mb-2">Rejected</p>
           <p class="text-3xl font-bold text-red-600 dark:text-red-400">{{ store.rejected }}</p>
         </div>
@@ -143,7 +159,9 @@
             : 'bg-slate-200 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-300 dark:hover:bg-white/10'
         ]">
           {{ tab.label }}
-          <span :class="['ml-1.5 text-xs px-1.5 py-0.5 rounded-full', activeTab === tab.value ? 'bg-white/20' : 'bg-slate-300 dark:bg-white/10']">{{ tab.count }}</span>
+          <span
+            :class="['ml-1.5 text-xs px-1.5 py-0.5 rounded-full', activeTab === tab.value ? 'bg-white/20' : 'bg-slate-300 dark:bg-white/10']">{{
+              tab.count }}</span>
         </button>
       </div>
 
@@ -153,7 +171,8 @@
       </div>
 
       <!-- Error -->
-      <div v-else-if="store.error" class="text-red-600 dark:text-red-400 text-sm p-4 bg-red-50 dark:bg-red-500/10 rounded-xl border border-red-200 dark:border-transparent">
+      <div v-else-if="store.error"
+        class="text-red-600 dark:text-red-400 text-sm p-4 bg-red-50 dark:bg-red-500/10 rounded-xl border border-red-200 dark:border-transparent">
         {{ store.error }}
       </div>
 
@@ -162,7 +181,8 @@
         class="bg-white dark:bg-white/3 border border-slate-200 dark:border-white/8 rounded-2xl overflow-hidden overflow-x-auto shadow-sm dark:shadow-none transition-colors duration-300">
         <table class="w-full text-sm">
           <thead>
-            <tr class="border-b border-slate-200 dark:border-white/8 text-xs text-slate-500 uppercase tracking-wider bg-slate-50 dark:bg-transparent">
+            <tr
+              class="border-b border-slate-200 dark:border-white/8 text-xs text-slate-500 uppercase tracking-wider bg-slate-50 dark:bg-transparent">
               <th class="text-left px-6 py-4 font-medium">Guest</th>
               <th class="text-left px-6 py-4 font-medium">Venue</th>
               <th class="text-left px-6 py-4 font-medium">Date</th>
@@ -172,7 +192,8 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 dark:divide-white/5">
-            <tr v-for="booking in filteredBookings" :key="booking.id" class="hover:bg-slate-50 dark:hover:bg-white/3 transition-colors group">
+            <tr v-for="booking in filteredBookings" :key="booking.id"
+              class="hover:bg-slate-50 dark:hover:bg-white/3 transition-colors group">
 
               <!-- Guest -->
               <td class="px-6 py-4">
@@ -193,14 +214,16 @@
 
               <!-- Slot -->
               <td class="px-6 py-4">
-                <span class="text-slate-600 dark:text-slate-400 text-xs bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 px-2.5 py-1 rounded-lg inline-block whitespace-nowrap">
+                <span
+                  class="text-slate-600 dark:text-slate-400 text-xs bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 px-2.5 py-1 rounded-lg inline-block whitespace-nowrap">
                   {{ booking.time_slot }}
                 </span>
               </td>
 
               <!-- Status Badge -->
               <td class="px-6 py-4">
-                <span :class="statusClass(booking.status)" class="text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap">
+                <span :class="statusClass(booking.status)"
+                  class="text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap">
                   {{ statusLabel(booking.status) }}
                 </span>
               </td>
