@@ -32,8 +32,11 @@
       <!-- Logo / Header -->
       <div class="text-center mb-10">
         <div class="inline-flex items-center justify-center mb-5 relative group">
-          <div class="absolute inset-0 bg-indigo-500 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full"></div>
-          <img src="/logo.png" alt="VenueBook" class="w-20 h-20 rounded-2xl shadow-xl shadow-indigo-500/20 relative z-10" />
+          <div
+            class="absolute inset-0 bg-indigo-500 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full">
+          </div>
+          <img src="/logo.png" alt="VenueBook"
+            class="w-20 h-20 rounded-2xl shadow-xl shadow-indigo-500/20 relative z-10" />
         </div>
         <h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight mb-2">VenueBook Admin</h1>
         <p class="text-slate-500 dark:text-slate-400 text-sm">Secure access to the management portal</p>
@@ -41,8 +44,11 @@
 
       <!-- Card Container with Gradient Border -->
       <div class="relative group">
-        <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
-        <div class="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div
+          class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500">
+        </div>
+        <div
+          class="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-3xl p-8 shadow-2xl">
 
           <!-- Error Alert -->
           <div v-if="authStore.error"
@@ -63,7 +69,8 @@
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <input id="login-email" v-model="email" type="email" required placeholder="admin@example.com"
@@ -79,7 +86,8 @@
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
                 <input id="login-password" v-model="password" type="password" required placeholder="••••••••"
@@ -90,7 +98,9 @@
             <!-- Submit -->
             <button id="login-submit" type="submit" :disabled="authStore.loading"
               class="relative w-full bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-bold rounded-xl py-3.5 text-sm transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 flex items-center justify-center gap-2 overflow-hidden group">
-              <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+              <div
+                class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+              </div>
               <svg v-if="authStore.loading" class="animate-spin w-5 h-5 relative z-10" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
@@ -101,7 +111,7 @@
         </div>
       </div>
 
-      <p class="text-center text-slate-500 dark:text-slate-500 text-xs mt-8 font-medium">Venue Booking System © 2025</p>
+      <p class="text-center text-slate-500 dark:text-slate-500 text-xs mt-8 font-medium">Venue Booking System © 2026</p>
     </div>
   </div>
 </template>
